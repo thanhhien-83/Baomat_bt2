@@ -1,6 +1,6 @@
 # Baomat_bt2
 
-
+ 
 # 1. Catalog (Root Object)
 Là điểm khởi đầu của toàn bộ cấu trúc PDF, định danh bằng /Type /Catalog.
 Giữ các tham chiếu (reference) đến:
