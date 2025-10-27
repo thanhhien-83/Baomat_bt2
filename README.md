@@ -64,7 +64,7 @@ Dùng để lưu trữ:
 /OCSPs, /CRLs – kết quả xác minh online  
 /VRI – thông tin xác minh theo từng chữ ký  
 Giúp người nhận xác thực chữ ký lâu dài (LTV) mà không cần mạng Internet.  
-2. Thời gian ký được lưu ở đâu?  
+# 2. Thời gian ký được lưu ở đâu?  
 Trong file PDF có chữ ký số, thông tin thời gian ký có thể được lưu ở nhiều vị trí khác nhau, tùy mức độ tin cậy và chuẩn sử dụng.  
 - /M trong Signature Dictionary  
 Nằm trong object chữ ký /Sig.  
@@ -90,7 +90,27 @@ Lưu trữ các dữ liệu xác minh như:
 /OCSPs, /CRLs (kiểm tra trạng thái),  
 Timestamp tokens (nếu có).  
 Dùng để xác minh lâu dài (LTV) khi không còn kết nối mạng.  
-
+# Giải thích khác biệt giữa thông tin thời gian /M và timestamp RFC3161.  
+# 1. /M (trong Signature dictionary)  
+- Nơi lưu: nằm trong Signature dictionary của file PDF, ví dụ:  
+/M (D:20251024T114053+07'00').  
+- Người tạo: phần mềm ký hoặc chính người ký (signing client).  
+- Bảo vệ bởi chữ ký: thường không được bảo vệ, vì không nằm trong signedAttributes.  
+→ Có thể bị sửa đổi mà chữ ký PDF vẫn hợp lệ.  
+- Giá trị pháp lý: không đáng tin, chỉ mang tính thông tin (metadata).   
+- Khả năng giả mạo: có thể bị chỉnh sửa dễ dàng vì chỉ là text.  
+- Cách xác minh: không có cơ chế xác minh riêng, chỉ xem được nội dung chuỗi thời gian.  
+# 2. timeStampToken (theo RFC 3161)  
+- Nơi lưu: bên trong PKCS#7 (thuộc /Contents của chữ ký),  
+hoặc trong Document Timestamp object (/DocTimeStamp) theo chuẩn PAdES.  
+- Người tạo: do TSA (Time Stamping Authority) – tổ chức cấp dấu thời gian độc lập.  
+- Bảo vệ bởi chữ ký: có – token được TSA ký bằng private key của họ,  
+nên trường genTime (thời gian phát hành) không thể bị thay đổi.  
+- Giá trị pháp lý: rất cao, vì chứng minh được tài liệu tồn tại vào thời điểm cụ thể,  
+được xác thực bởi bên thứ ba đáng tin cậy (TSA).  
+- Khả năng giả mạo: rất khó, chỉ có thể nếu khóa riêng của TSA bị lộ.  
+- Cách xác minh: kiểm tra chữ ký TSA trên token, xác minh chuỗi chứng chỉ TSA,  
+và đọc giá trị genTime (thời gian được cấp dấu).  
 
 
 
