@@ -21,7 +21,8 @@ Minh họa quá trình kiểm thử lại file đã ký này: tất cả các ki
 File nhật ký xác thực, ghi lại tuần tự từng bước kiểm thử với trạng thái hợp lệ, và kết luận rõ ràng rằng chữ ký số cùng chuỗi chứng chỉ hoàn toàn được tin cậy.  
 <img width="1445" height="708" alt="image" src="https://github.com/user-attachments/assets/6d9e117f-2c8f-440d-a6d4-86cf133eb280" />  
 
-
+# Nhận xét tổng thể:  
+Tổng thể, toàn bộ quy trình từ ký đến xác thực đều được tự động hóa, kiểm tra đa tầng và lưu lại nhật ký chi tiết, giúp dễ dàng truy vết và kiểm tra lại khi cần thiết. Việc triển khai như vậy không chỉ đảm bảo tính bảo mật, toàn vẹn của tài liệu mà còn đáp ứng các tiêu chuẩn pháp lý trong lưu trữ và trao đổi văn bản điện tử. Đây là phương pháp làm việc chuyên nghiệp, minh bạch, phù hợp với các yêu cầu thực tế về an toàn thông tin hiện nay.  
 
 
 
