@@ -1,0 +1,10 @@
+Bước 1: ✓ HỢP LỆ - ByteRange: (0, 345075, 360373, 895)
+Bước 2: ✓ HỢP LỆ - PKCS#7 định dạng hợp lệ
+Bước 3: ✓ HỢP LỆ - messageDigest khớp
+Bước 4: ✓ HỢP LỆ - Signature được xác thực
+Bước 5: ✓ HỢP LỆ - Chain hợp lệ
+Bước 6: ✓ HỢP LỆ - OCSP/CRL OK
+Bước 7: ✓ HỢP LỆ - Có timestamp token
+Bước 8: ✓ HỢP LỆ - Incremental update hợp lệ (endesive signature)
+
+KẾT LUẬN: ✓ HỢP LỆ - Chữ ký và chuỗi chứng chỉ được tin cậy
